@@ -9,6 +9,5 @@
 그 도구를 이용해 **긍정적인 변화**를 이끄는 개발자가 되고자 합니다.<br>
 
 E-mail : yujinhong3@gmail.com <br>
-Portfolio : https://honored-albacore-f18.notion.site/17205257c9fd8076b76fd9ea329d4dac
 	
 <br>
