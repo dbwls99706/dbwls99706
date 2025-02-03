@@ -1,16 +1,14 @@
-## Hi there 👋
+<div align="center">
+ 
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=320&section=header&text=dbwls99706&fontSize=70)
 
-<!--
-**dbwls99706/dbwls99706** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<br>
 
-Here are some ideas to get you started:
+함께 **소통**하며 **성장**하는 **개발자 홍유진**입니다. <br>
+**로봇**이 사람들의 삶을 더 편리하고 안전하게 만드는 도구가 되듯, <br>
+그 도구를 이용해 **긍정적인 변화**를 이끄는 개발자가 되고자 합니다.<br>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+E-mail : yujinhong3@gmail.com <br>
+Portfolio : https://honored-albacore-f18.notion.site/17205257c9fd8076b76fd9ea329d4dac
+	
+<br>
