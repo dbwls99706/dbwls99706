@@ -8,5 +8,9 @@
 <a href="https://velog.io/@dbwls" target="_blank">
   <img src="https://img.shields.io/badge/velog-20C997?style=flat&logo=velog&logoColor=white" alt="Velog Badge"/>
 </a>
+
+
 <br>
+
 <br>
+![Open Source Contributions](./contributions.svg)
