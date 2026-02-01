@@ -20,16 +20,9 @@
     <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=velog&logoColor=white" alt="Velog"/>
   </a>
 
-  <br /><br />
-
   <!-- GitHub Stats & Langs -->
   <div style="display: flex; justify-content: center; gap: 10px;">
-    <a href="https://github.com/dbwls99706">
-      <img src="https://github-readme-stats.vercel.app/api?username=dbwls99706&show_icons=true&theme=transparent&hide_border=true&title_color=000&text_color=333&icon_color=20C997" height="150" alt="GitHub Stats" />
-    </a>
-    <a href="https://github.com/dbwls99706">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dbwls99706&layout=compact&theme=transparent&hide_border=true&title_color=000&text_color=333" height="150" alt="Top Languages" />
-    </a>
+
   </div>
 
   <br />
@@ -37,9 +30,9 @@
   <!-- Tech Stack -->
   <h3>🛠️ Tech Stack</h3>
   <div>
+    <img src="https://img.shields.io/badge/Robotics-22314E?style=flat-square&logo=ros&logoColor=white" alt="Robotics"/>
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white" alt="Python"/>
     <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>
-    <img src="https://img.shields.io/badge/Robotics-22314E?style=flat-square&logo=ros&logoColor=white" alt="Robotics"/>
     <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
   </div>
 
