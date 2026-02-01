@@ -12,5 +12,6 @@
 
 <br>
 
-<br>
 ![Open Source Contributions](./contributions.svg)
+
+<br>
