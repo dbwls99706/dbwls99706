@@ -12,6 +12,6 @@
 
 <br>
 
-![Open Source Contributions](./contributions.svg)
+![Open Source Contributions](./contributions.svg?v=dark)
 
 <br>
