@@ -16,6 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // 테스트/데모용 mock 데이터
 function getMockData(username) {
+  const sampleBase64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
   return {
     username,
     totalPRs: 2,
@@ -23,24 +24,32 @@ function getMockData(username) {
     contributions: [
       {
         name: 'ros2/rclpy',
+        owner: 'ros2',
+        avatarUrl: 'https://github.com/ros2.png?size=40',
+        avatarBase64: sampleBase64,
         prs: [
           {
             number: 1492,
             title: 'Fix: deadlock when calling rclpy.shutdown() from callbacks',
             url: 'https://github.com/ros2/rclpy/pull/1492',
-            mergedAt: '2025-10-03T17:37:26Z'
+            mergedAt: '2025-10-03T17:37:26Z',
+            labels: ['bug', 'enhancement']
           }
         ],
         latestMerge: '2025-10-03T17:37:26Z'
       },
       {
         name: 'ros2/rosbag2',
+        owner: 'ros2',
+        avatarUrl: 'https://github.com/ros2.png?size=40',
+        avatarBase64: sampleBase64,
         prs: [
           {
             number: 2135,
             title: 'Fix: Add null pointer check for reader_imp in the Reader constructor',
             url: 'https://github.com/ros2/rosbag2/pull/2135',
-            mergedAt: '2025-08-14T11:10:31Z'
+            mergedAt: '2025-08-14T11:10:31Z',
+            labels: ['bug']
           }
         ],
         latestMerge: '2025-08-14T11:10:31Z'
@@ -60,7 +69,10 @@ async function main() {
   const title = process.env.TITLE || 'Open-Source Contributions';
   const sortBy = process.env.SORT_BY || 'date'; // 'date' or 'count'
   const monthsAgo = process.env.MONTHS_AGO ? parseInt(process.env.MONTHS_AGO, 10) : null;
+  const excludeOrgs = process.env.EXCLUDE_ORGS ? process.env.EXCLUDE_ORGS.split(',').map(s => s.trim()).filter(Boolean) : [];
+  const includeOrgs = process.env.INCLUDE_ORGS ? process.env.INCLUDE_ORGS.split(',').map(s => s.trim()).filter(Boolean) : [];
   const useMock = process.env.USE_MOCK === 'true' || process.argv.includes('--mock');
+  const previewThemes = process.env.PREVIEW_THEMES ? process.env.PREVIEW_THEMES.split(',').map(s => s.trim()).filter(Boolean) : [];
 
   if (!username) {
     console.error('Error: GitHub username is required.');
@@ -74,9 +86,15 @@ async function main() {
   if (monthsAgo) {
     console.log(`Filtering: Last ${monthsAgo} months only`);
   }
+  if (excludeOrgs.length > 0) {
+    console.log(`Excluding orgs: ${excludeOrgs.join(', ')}`);
+  }
+  if (includeOrgs.length > 0) {
+    console.log(`Including only orgs: ${includeOrgs.join(', ')}`);
+  }
 
   try {
-    const data = useMock ? getMockData(username) : await fetchContributions(username, token);
+    const data = useMock ? getMockData(username) : await fetchContributions(username, token, { excludeOrgs, includeOrgs });
 
     console.log(`Found ${data.totalPRs} merged PRs in ${data.totalRepos} external repositories`);
 
@@ -101,6 +119,20 @@ async function main() {
     // 파일 저장
     writeFileSync(outputPath, svg);
     console.log(`\nSVG saved to: ${outputPath}`);
+
+    // Preview 테마 SVG 생성 (README용)
+    if (previewThemes.length > 0) {
+      console.log(`\nGenerating preview themes: ${previewThemes.join(', ')}`);
+      for (const previewTheme of previewThemes) {
+        const previewSvg = data.totalRepos > 0
+          ? generateSVG(data, { theme: previewTheme, autoTheme: false, maxRepos, title, sortBy, monthsAgo })
+          : generateEmptySVG(username, { theme: previewTheme, autoTheme: false, title });
+
+        const previewPath = `./contributions-${previewTheme}.svg`;
+        writeFileSync(previewPath, previewSvg);
+        console.log(`SVG saved to: ${previewPath}`);
+      }
+    }
 
   } catch (error) {
     console.error('Error:', error.message);
