@@ -39,8 +39,7 @@
   <br /><br />
   <!-- Velog Stats & Contributions -->
   <!-- Velog Stats & Contributions -->
-  <h3>📝 Blog</h3>
-  <img src="https://velog-github-badge.vercel.app/badge/dbwls?theme=dark&posts=3" alt="Velog Stats" />
+
   <br /><br />
   <h3>🔧 Open Source Contributions</h3>
   <img src="./contributions.svg" alt="Open Source Contributions" />
