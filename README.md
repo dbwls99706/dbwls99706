@@ -37,13 +37,17 @@
   </div>
 
   <br /><br />
-
-  <!-- Contributions -->
-  ![Open Source Contributions](./contributions.svg)
+  <!-- Velog Stats & Contributions -->
+  <!-- Velog Stats & Contributions -->
+  <h3>📝 Blog</h3>
+  <img src="https://velog-github-badge.vercel.app/badge/dbwls?theme=dark&posts=3" alt="Velog Stats" />
+  <br /><br />
+  <h3>🔧 Open Source Contributions</h3>
+  <img src="./contributions.svg" alt="Open Source Contributions" />
+  <br /><br />
 
   <br /><br />
 
   <!-- Footer Snake (Optional) -->
   <!-- <img src="https://github.com/dbwls99706/dbwls99706/blob/output/github-contribution-grid-snake.svg" /> -->
-
 </div>
