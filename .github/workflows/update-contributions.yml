@@ -50,4 +50,8 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add contributions.svg
           git diff --staged --quiet || git commit -m "chore: update contributions SVG [skip ci]"
-          git push
+          for i in 1 2 3 4; do
+            git push && break
+            echo "Push attempt $i failed, retrying in $((2 ** i))s..."
+            sleep $((2 ** i))
+          done
